@@ -1,6 +1,7 @@
 The following code demonstrates different ways to handle missing data replacement in R, progressing from manual coding to efficient functional programming with functions and closures, and finally applying multiple functions to data succinctly.
 
 Motivation and Data Creation
+# Create a simple 6x6 matrix x with random values sampled from integers 1 to 10 plus the value -999 (used as missing value indicator).
 x = matrix(sample(c(1:10, -999), 36, rep = TRUE), nrow=6 )
 df <- data.frame(x)
 names(df) <- letters[1:6]

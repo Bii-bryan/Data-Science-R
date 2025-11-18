@@ -1,4 +1,4 @@
-This code demonstrates R's apply family functions (apply, lapply, sapply) for efficient data manipulation.
+This code demonstrates R apply family functions (apply, lapply, sapply) for efficient data manipulation.
 
 1. apply() - Apply Functions to Matrix Rows/Columns
 set.seed(1)

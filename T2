@@ -1,1 +1,57 @@
+The following code progresses from inefficient, repetitive code to elegant functional programming patterns that are more maintainable and less error-prone.
+
+Data Creation & Basic Missing Value Replacement
+set.seed(4)
+x = matrix(sample(c(1:10, -999), 36, rep = TRUE), nrow=6)
+df <- data.frame(x)
+names(df) <- letters[1:6]
+
+df$a[df$a == -999] <- NA
+df$b[df$b == -999] <- NA
+# etc...
+
+Better Method: Using a Function
+fix_missing <- function(x) {
+  x[x == -999] <- NA
+  x
+}
+df$a <- fix_missing(df$a)
+df$b <- fix_missing(df$b)
+# etc...
+
+Best Method: Apply Function to All Columns
+fix_missing <- function(x) {
+  x[x == -99] <- NA  # Note: changed to -99 in this version
+  x
+}
+df[] <- lapply(df, fix_missing)
+
+Functional Programming Building Blocks
+1. Anonymous Functions
+(function(x) x + 3)(10)  # Returns 13
+A function without a name, defined and executed immediately.
+formals(function(x = 4) g(x) + h(x))      # Shows parameters
+body(function(x = 4) g(x) + h(x))         # Shows function body
+environment(function(x = 4) g(x) + h(x))  # Shows environment
+Demonstrates the three components of any R function.
+
+2. List of Functions
+funs2 <- list(
+  sum = function(x, ...) sum(x, ..., na.rm = TRUE),
+  mean = function(x, ...) mean(x, ..., na.rm = TRUE),
+  median = function(x, ...) median(x, ..., na.rm = TRUE)
+)
+lapply(funs2, function(f) f(x))
+Stores multiple functions in a list and applies them all to data x using lapply().
+
+3. Closure
+power <- function(exponent) {
+  function(x) {
+    x ^ exponent
+  }
+}
+square <- power(2)
+cube <- power(3)
+square(5)  # Returns 25
+
 

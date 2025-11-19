@@ -1,7 +1,7 @@
 The following code demonstrates three approaches to handling missing data (from worst to best) and introduces functional programming concepts in R.
 
 #Create a 6×6 matrix with random values from 1-10 and -999 (representing missing data)
-#Converts to dataframe with columns named a, b, c, d, e, f
+#Convert to dataframe with columns named a, b, c, d, e, f
 #-999 is a common code for missing values in datasets
 x = matrix(sample(c(1:10, -999), 36, rep = TRUE), nrow=6)
 df <- data.frame(x)

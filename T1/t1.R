@@ -10,10 +10,10 @@ names(df) <- letters[1:6]
 Approach 1: Manual Replacement (WORST ❌)
 df$a[df$a == -999] <- NA
 df$b[df$b == -999] <- NA
-df$c[df$c == -989] <- NA  # TYPO: should be -999
+df$c[df$c == -999] <- NA  
 df$d[df$d == -999] <- NA
 df$e[df$e == -999] <- NA
-df$f[df$g == -999] <- NA  # ERROR: column 'g' doesn't exist!
+df$f[df$f == -999] <- NA  
 
 Approach 2: Using a Function (BETTER ✓)
 fix_missing <- function(x) {
@@ -26,7 +26,7 @@ df$b <- fix_missing(df$b)
 df$c <- fix_missing(df$c)
 df$d <- fix_missing(df$d)
 df$e <- fix_missing(df$e)
-df$f <- fix_missing(df$e)  # TYPO: uses df$e instead of df$f
+df$f <- fix_missing(df$f)  
 
 Approach 3: Using lapply() (BEST ✅)
 fix_missing <- function(x) {

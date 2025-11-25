@@ -12,4 +12,4 @@ Learning outcomes:
 
   By the end, I aim to get geared up to tackle real-life data challenges by analyzing complex datasets. This in turn will bring out insights that companies can convert into actions.
   Software used is R Studio for Windows.
-  Learning sources include: https://github.com/PacktPublishing/Programming-for-Data-Science-with-R-
+  Learning sources include: https://www.packtpub.com/
